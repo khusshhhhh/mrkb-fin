@@ -1,0 +1,23 @@
+@media (max-width: 576px) {
+  .banner-home .rev_slider li .slider-sub-title {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-home .rev_slider li .slider-sub-title {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner-home .rev_slider li .slider-sub-title {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .banner-home .rev_slider li .slider-sub-title {
+    margin-bottom: 50px;
+  }
+}
