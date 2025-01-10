@@ -7845,6 +7845,15 @@ a.full-width-icon:hover .social-text {
   font-weight: 500;
 }
 
+.waituk_contact-form .form-control option {
+  color: #87888f;
+}
+
+/* .waituk_contact-form .form-group .from-drop {
+  padding-top: 12px;
+  padding-bottom: 12px;
+} */
+
 .waituk_contact-form .form-group {
   margin-bottom: 1.875rem;
 }
@@ -14357,5 +14366,43 @@ a.full-width-icon:hover .social-text {
     width: 200%;
     padding-bottom: 200%;
     opacity: 0;
+  }
+}
+
+.call-now-button {
+  position: fixed; /* Ensures it stays visible on the screen */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensures it stays above other content */
+  background-color: #ff9d00; /* Button color */
+  color: white; /* Text color */
+  font-size: 18px; /* Text size */
+  font-weight: bold; /* Text weight */
+  padding: 12px 20px; /* Button padding */
+  border-radius: 50px; /* Rounded button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button shadow */
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Aligns text and icon */
+  align-items: center; /* Centers icon and text vertically */
+  justify-content: center; /* Centers content horizontally */
+  transition: background-color 0.3s ease; /* Hover effect */
+}
+
+.call-now-button:hover {
+  background-color: #ff8300; /* Darker blue on hover */
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .call-now-button {
+    font-size: 16px; /* Adjust size for tablets and smaller devices */
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .call-now-button {
+    font-size: 14px; /* Adjust size for mobile devices */
+    padding: 8px 12px;
   }
 }
