@@ -103,13 +103,19 @@ $result = $conn->query($sql);
         }
 
         .note-field {
-            min-height: 50px;
+            min-height: 80px;
             width: 80%;
             max-height: 200px;
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 5px;
             font-size: 14px;
+            resize: vertical;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .message-field {
             resize: vertical;
             overflow-wrap: break-word;
             word-wrap: break-word;
@@ -337,7 +343,7 @@ $result = $conn->query($sql);
                         <td>
                             <?php echo $row['service']; ?>
                         </td>
-                        <td class="message-column">
+                        <td class="message-column message-field">
                             <?php echo $row['message']; ?>
                         </td>
                         <td>
