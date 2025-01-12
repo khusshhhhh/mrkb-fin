@@ -46,7 +46,7 @@ $result = $conn->query($sql);
             width: 15%;
             background-color: #ff9d00;
             padding: 15px;
-            height: fit-content;
+            height: max-content;
         }
 
         .sidebar h2 {
