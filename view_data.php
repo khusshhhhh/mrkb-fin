@@ -195,6 +195,12 @@ $result = $conn->query($sql);
                 font-size: 14px;
             }
 
+            table th:nth-child(9),
+            table td:nth-child(9) {
+                width: 250px;
+                /* Set the desired width */
+            }
+
             .search-form input {
                 width: 300px;
             }
@@ -242,6 +248,12 @@ $result = $conn->query($sql);
             table {
                 display: block;
                 overflow-x: auto;
+            }
+
+            table th:nth-child(9),
+            table td:nth-child(9) {
+                width: 250px;
+                /* Set the desired width */
             }
 
             .search-form input {
