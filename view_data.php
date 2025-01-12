@@ -133,6 +133,17 @@ $result = $conn->query($sql);
             gap: 5px;
         }
 
+        message-column {
+            width: 120px;
+            /* Set the desired width */
+        }
+
+        table th:nth-child(9),
+        table td:nth-child(9) {
+            width: 250px;
+            /* Set the desired width */
+        }
+
         button:hover {
             background-color: #008311;
         }
@@ -286,7 +297,7 @@ $result = $conn->query($sql);
                     <th>Email</th>
                     <th>State</th>
                     <th>Service</th>
-                    <th>Message</th>
+                    <th class="message-column">Message</th>
                     <th>Note</th>
                 </tr>
             </thead>
@@ -314,7 +325,7 @@ $result = $conn->query($sql);
                         <td>
                             <?php echo $row['service']; ?>
                         </td>
-                        <td>
+                        <td class="message-column">
                             <?php echo $row['message']; ?>
                         </td>
                         <td>
