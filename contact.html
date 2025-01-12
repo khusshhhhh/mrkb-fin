@@ -330,7 +330,8 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <input type="text" placeholder="NAME *" id="con_fname"
-                                                            name="con_fname" class="form-control" required>
+                                                            name="con_fname" class="form-control" aria-label="Name"
+                                                            required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -338,13 +339,17 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <input type="tel" placeholder="PHONE NUMBER *" id="con_phone"
-                                                            name="con_phone" class="form-control" required>
+                                                            name="con_phone" class="form-control" pattern="[0-9]{10,15}"
+                                                            title="Please enter a valid phone number (10-15 digits)"
+                                                            required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <input type="email" placeholder="EMAIL ADDRESS" id="con_email"
-                                                            name="con_email" class="form-control">
+                                                            name="con_email" class="form-control"
+                                                            pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                                                            title="Please enter a valid email address">
                                                     </div>
                                                 </div>
                                             </div>
@@ -353,9 +358,7 @@
                                                     <div class="form-group">
                                                         <select id="state_selector" name="state_selector"
                                                             class="form-control from-drop" required>
-                                                            <option value="" disabled selected>
-                                                                SELECT STATE *
-                                                            </option>
+                                                            <option value="" disabled selected>SELECT STATE *</option>
                                                             <option value="ACT">ACT</option>
                                                             <option value="NSW">NSW</option>
                                                             <option value="VIC">VIC</option>
@@ -369,7 +372,8 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <input type="text" placeholder="POST CODE" id="post_code"
-                                                            name="post_code" class="form-control">
+                                                            name="post_code" class="form-control"
+                                                            aria-label="Post Code">
                                                     </div>
                                                 </div>
                                             </div>
@@ -378,31 +382,32 @@
                                                     <div class="form-group">
                                                         <select id="service_selector" name="service_selector"
                                                             class="form-control from-drop" required>
-                                                            <option value="" disabled selected>
-                                                                SELECT SERVICE YOU ARE INTERESTED IN *
-                                                            </option>
+                                                            <option value="" disabled selected>SELECT SERVICE YOU ARE
+                                                                INTERESTED IN *</option>
                                                             <option value="Personal Loan">PERSONAL LOANS</option>
                                                             <option value="Home Loan">HOME LOANS</option>
                                                             <option value="Business Loan">BUSINESS & COMMERCIAL LOANS
                                                             </option>
-                                                            <option value="Business Loan">ASSET FINANCING</option>
-                                                            <option value="Business Loan">SMSF LOANS</option>
-                                                            <option value="Business Loan">VEHICLE LOANS</option>
-                                                            <option value="Debt Consolidation">INVESTMENT LOANS
-                                                            </option>
+                                                            <option value="Asset Financing">ASSET FINANCING</option>
+                                                            <option value="SMSF Loans">SMSF LOANS</option>
+                                                            <option value="Vehicle Loans">VEHICLE LOANS</option>
+                                                            <option value="Investment Loans">INVESTMENT LOANS</option>
                                                             <option value="Other">Other</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div style="display:none;">
+                                                <input type="text" name="honeypot" id="honeypot" value="">
+                                            </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" placeholder="MESSAGE *" id="con_message"
-                                                    name="con_message" required></textarea>
+                                                    name="con_message" aria-label="Message" required></textarea>
                                             </div>
                                             <div class="btn-container">
-                                                <button id="btn_sent" class="btn btn-primary btn-arrow">SEND
-                                                    MESSAGE</button>
-                                                <p id="error_message"> </p>
+                                                <button type="submit" id="btn_sent"
+                                                    class="btn btn-primary btn-arrow">SEND MESSAGE</button>
+                                                <p id="error_message"></p>
                                             </div>
                                         </form>
                                     </div>
@@ -618,7 +623,7 @@
     <script src="js/jquery.main.js"></script>
     <script src="js/jquery.validate.js"></script>
     <script src="js/mailchimp.js"></script>
-    <script src="js/contact-form.js"></script>
+    <!-- <script src="js/contact-form.js"></script> -->
     <!-- REVOLUTION JS FILES -->
     <script type="text/javascript" src="vendors/rev-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="vendors/rev-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
