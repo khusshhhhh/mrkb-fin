@@ -1171,7 +1171,7 @@ h3 {
   li
   .mini-nav
   > a {
-  color: #fff;
+  color: #000000;
 }
 
 /***********************  header logo center ***********************/
@@ -3397,7 +3397,7 @@ em.state-invalid {
 }
 
 .mega-menus .navbar-default.navbar-default-dark .navbar-nav > li > a {
-  color: white;
+  color: #ffffff;
 }
 
 .mega-menus .navbar-default.navbar-default-dark .navbar-nav > li > a:hover {
@@ -3425,7 +3425,7 @@ em.state-invalid {
   .dropdown:hover
   > a {
   background-color: #e00101;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .mega-menus
@@ -3769,6 +3769,7 @@ em.state-invalid {
 
 .main-header .navbar {
   padding: 0;
+  z-index: 999;
   min-height: 6.063rem;
 }
 
@@ -3781,7 +3782,6 @@ em.state-invalid {
 .main-header .navbar .navbar-nav li {
   text-transform: uppercase;
   font-weight: 500;
-  color: #fff;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
@@ -3793,10 +3793,14 @@ em.state-invalid {
 }
 
 .main-header .navbar .navbar-nav li a {
-  color: #ffffff;
+  color: #000000;
   font-size: 0.85rem;
   padding: 0.75rem 1.5rem;
   display: inline-block;
+}
+
+.main-header .navbar .nav li a {
+  color: black;
 }
 
 .main-header .navbar .navbar-nav li a:hover {
@@ -3808,7 +3812,7 @@ em.state-invalid {
 .main-header .navbar .navbar-nav li a:hover,
 .main-header .navbar .navbar-nav li a:focus {
   background: none;
-  color: #c1c5cd;
+  color: #000000;
 }
 
 .main-header .navbar .navbar-nav li a.dropdown-toggle:after {
@@ -3846,7 +3850,7 @@ em.state-invalid {
 }
 
 .main-header .navbar .navbar-nav li .dropdown-menu li:hover > a {
-  color: #fff;
+  color: #000000;
   padding-left: 0.3125rem;
 }
 
@@ -4136,20 +4140,22 @@ em.state-invalid {
 }
 
 .main-header.header-white .navbar .navbar-nav li {
-  color: #55565b;
+  color: #000000;
 }
 
 .main-header.header-white .navbar .navbar-nav li a {
-  color: #55565b;
+  color: #000000;
 }
 
 .main-header.header-white .navbar .navbar-nav li a:hover,
 .main-header.header-white .navbar .navbar-nav li a:focus {
-  color: #a7a7a7;
+  color: #000000;
 }
 
+/*Services Dropdown*/
+
 .main-header.header-white .navbar .navbar-nav li .dropdown-menu {
-  background: #fff;
+  background: #ffffff;
 }
 
 .main-header.header-white .navbar .navbar-nav li .dropdown-menu li a {
@@ -11208,20 +11214,6 @@ a.full-width-icon:hover .social-text {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all linear 0.3s;
-  -o-transition: all linear 0.3s;
-  transition: all linear 0.3s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 9999999999;
-}
-
 .v-align-row {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -14409,38 +14401,164 @@ a.full-width-icon:hover .social-text {
 
 /* Image Zoom Effect */
 
-.image-container {
+.banner-home {
   position: relative;
-  display: inline-block;
-  height: 100vh;
+  /* background-image: url("img/MRKB Finance Adelaide Loan.png"); */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* White text */
+  overflow: hidden;
 }
 
-.image-container img {
-  display: block;
+.hero-container {
+  position: relative;
+  z-index: 10; /* Place content above the overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  /* width: 120%; */
+  text-align: center;
+  margin: 200px 0 50px 0;
+  /* padding: 150px 100px 100px 100px; */
+  /* background-color: #04a587; */
+}
+
+.hero-text h4 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.hero-text h1 {
+  font-size: 6rem;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #000;
+}
+
+.hero-info {
+  width: 90%;
+  text-align: left;
+}
+
+.hero-info .loan-calc-box {
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  padding: 2rem 2rem;
+  margin-bottom: 50px;
+}
+
+.hero-info .loan-calc-box h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loan-topper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.loan-topper button {
+  background-color: #000;
+  color: white;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 55px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.loan-topper button:hover {
+  background-color: #ff9d00;
+}
+
+.hero-info .loan-calc-box label {
+  font-size: 1rem;
+  color: #000;
+}
+
+.hero-info .loan-calc-box input {
   width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
 }
 
-.image-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-info .loan-calc-box select {
   width: 100%;
-  height: 100vh;
-  background-color: black;
-  opacity: 0.6;
-  pointer-events: none;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
 }
 
-.zoom-image {
-  animation: zoomEffect 15s infinite alternate ease-in-out;
+.hero-info .loan-calc-box select option {
+  padding: 10px 0;
 }
 
-@keyframes zoomEffect {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
+.input-section1,
+.input-section2 {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input-section1 label {
+  font-weight: 600;
+}
+
+.result-section {
+  margin-top: 40px;
+}
+
+.result-section .result-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+
+.repay-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 250px;
+}
+
+.repay-detail1,
+.repay-detail2 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.repay-details span {
+  font-size: 3rem;
+  font-weight: 600;
+  color: black;
 }

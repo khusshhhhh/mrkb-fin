@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Loan Calculator</title>
+    <link rel="stylesheet" href="try.css">
+</head>
+
+<body>
+    <div class="calculator-container">
+        <h1>Loan Calculator</h1>
+        <div class="input-section">
+            <label>Loan Amount ($):</label>
+            <input type="number" id="loan-amount" value="">
+
+            <label>Term (Years):</label>
+            <input type="number" id="loan-term" value="">
+
+            <label>Interest Rate (%):</label>
+            <input type="number" id="interest-rate" value="">
+
+            <label>Additional Repayments ($):</label>
+            <input type="number" id="extra-repayment" value="">
+        </div>
+
+        <div class="result-section">
+            <h2>Your Monthly Repayments</h2>
+            <div>
+                <strong>Monthly Payment:</strong> <span id="monthly-payment">$0</span>
+            </div>
+            <div>
+                <strong>Total Loan Repayment:</strong> <span id="total-repayment">$0</span>
+            </div>
+            <div>
+                <strong>Total Interest Paid:</strong> <span id="total-interest">$0</span>
+            </div>
+        </div>
+    </div>
+    <script src="try.js"></script>
+</body>
+
+</html>
