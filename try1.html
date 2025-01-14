@@ -105,7 +105,7 @@
                                         <h4>MRKB Finance Loan Calculator</h4>
                                     </div>
                                     <div class="loan-reset">
-                                        <button>Reset</button>
+                                        <button id="loan-reset">Reset</button>
                                     </div>
                                 </div>
                                 <div class="input-section">
@@ -135,9 +135,19 @@
                                 <div class="result-section">
                                     <h5 class="result-title">Your Repayment Plan</h5>
                                     <div class="repay-details">
+                                        <div class="repay-detail3">
+                                            <div class="repay-freq">
+                                                <h5>Repayment Frequency:</h5>
+                                                <select name="repay-freq" id="repay-freq">
+                                                    <option value="monthly">Monthly</option>
+                                                    <option value="fortnightly">Fortnightly</option>
+                                                    <option value="weekly">Weekly</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="repay-detail1">
                                             <div class="result-repay">
-                                                <h5>Monthly Payment:</h5>
+                                                <h5>Repayment per time period:</h5>
                                                 <span id="repay-amount">$0</span>
                                             </div>
                                             <div class="result-int">
@@ -153,16 +163,6 @@
                                             <div class="result-total-int">
                                                 <h5>Total Interest Paid:</h5>
                                                 <span id="total-interest">$0</span>
-                                            </div>
-                                        </div>
-                                        <div class="repay-detail3">
-                                            <div class="repay-freq">
-                                                <h5>Repayment Frequency:</h5>
-                                                <select name="repay-freq" id="repay-freq">
-                                                    <option value="monthly">Monthly</option>
-                                                    <option value="fortnightly">Fortnightly</option>
-                                                    <option value="weekly">Weekly</option>
-                                                </select>
                                             </div>
                                         </div>
                                     </div>

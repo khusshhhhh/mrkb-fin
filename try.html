@@ -2,43 +2,897 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Loan Calculator</title>
-    <link rel="stylesheet" href="try.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MRKB Finance</title>
+    <!-- Font Icons -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link media="all" rel="stylesheet" href="css/fonts/icomoon/icomoon.css">
+    <link media="all" rel="stylesheet" href="css/fonts/roxine-font-icon/roxine-font.css">
+    <link media="all" rel="stylesheet" href="vendors/font-awesome/css/font-awesome.css">
+    <!-- Vendors -->
+    <link media="all" rel="stylesheet" href="vendors/owl-carousel/dist/assets/owl.carousel.min.css">
+    <link media="all" rel="stylesheet" href="vendors/owl-carousel/dist/assets/owl.theme.default.min.css">
+    <link media="all" rel="stylesheet" href="vendors/animate/animate.css">
+    <link media="all" rel="stylesheet" href="vendors/rateyo/jquery.rateyo.css">
+    <link media="all" rel="stylesheet" href="vendors/bootstrap-datepicker/css/bootstrap-datepicker.css">
+    <link media="all" rel="stylesheet" href="vendors/fancyBox/source/jquery.fancybox.css">
+    <link media="all" rel="stylesheet" href="vendors/fancyBox/source/helpers/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap 4 -->
+    <link media="all" rel="stylesheet" href="css/bootstrap.css">
+    <!-- Rev Slider -->
+    <link rel="stylesheet" type="text/css" href="vendors/rev-slider/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="vendors/rev-slider/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="vendors/rev-slider/revolution/css/navigation.css">
+    <!-- Theme CSS -->
+    <link media="all" rel="stylesheet" href="orange1.css">
+    <!-- Custom CSS -->
+    <!-- <link media="all" rel="stylesheet" href="css/custom.css"> -->
 </head>
 
 <body>
-    <div class="calculator-container">
-        <h1>Loan Calculator</h1>
-        <div class="input-section">
-            <label>Loan Amount ($):</label>
-            <input type="number" id="loan-amount" value="">
+    <!-- main wrapper -->
+    <div id="wrapper">
+        <div class="page-wrapper">
+            <a href="tel:+61476012064" class="call-now-button">
+                CALL NOW
+            </a>
+            <!-- header of the page -->
+            <header class="fixed-top main-header header-white transparent" id="waituk-main-header">
+                <div id="nav-section">
+                    <div class="bottom-header container-fluid mega-menus" id="mega-menus">
+                        <nav class="navbar navbar-toggleable-md no-border-radius no-margin mega-menu-multiple"
+                            id="navbar-inner-container">
+                            <!-- <form action="mega-menu-5.html" id="top-search" class="no-margin top-search">
+                                <div class="form-group no-margin">
+                                    <input class="form-control no-border" id="search_term" name="search_term"
+                                        placeholder="Type & Press Enter" type="text">
+                                </div>
+                            </form> -->
+                            <button type="button" class="navbar-toggler navbar-toggler-left" data-toggle="collapse"
+                                data-target="#mega-menu">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand mr-auto m-sm-auto" href="index.html"> <img src="img/logoB.png"
+                                    alt="roxine"> <img src="img/logoB.png" alt="roxine"> </a>
+                            <div class="collapse navbar-collapse flex-row-reverse" id="mega-menu">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown" data-animation="fadeIn">
+                                        <a class="dropdown-toggle active" href="index.html" data-title="Home"> Home </a>
+                                        <!-- <ul class="dropdown-menu no-border-radius">
+                                            <li><a href="index.html"> Creative Agency </a></li>
+                                            <li><a href="design-studio.html"> Design Studio </a></li>
+                                            <li><a href="digital-agency.html"> Digital Agency </a></li>
+                                            <li><a href="construction.html"> Construction </a></li>
+                                            <li><a href="corporate.html"> Corporate </a></li>
+                                        </ul> -->
+                                    </li>
+                                    <li class="dropdown" data-animation="fadeIn">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" data-title="Home">SERVICES</a>
+                                        <ul class="dropdown-menu no-border-radius">
+                                            <li><a href="business-commercial.html">- BUSINESS & COMMERCIAL LOANS</a>
+                                            </li>
+                                            <li><a href="home-loan.html">- FIRST & NEXT HOME LOANS</a></li>
+                                            <li><a href="asset-financing.html">- ASSET FINANCING</a></li>
+                                            <li><a href="personal-loan.html">- PERSONAL LOANS</a></li>
+                                            <li><a href="investment-loan.html">- INVESTMENT LOANS</a></li>
+                                            <li><a href="smsf-loan.html">- SMSF LOANS</a></li>
+                                            <li><a href="vehicle-loan.html">- VEHICLE AND AUTOMOBILE LOANS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown" data-animation="fadeIn">
+                                        <a class="dropdown-toggle" href="about.html" data-title="Home">About Us</a>
+                                        <!-- <ul class="dropdown-menu no-border-radius">
+                                            <li class="dropdown dropdown-left dropdown-parent">
+                                                <a class="sub-marker" href="#"> No Sidebar <i
+                                                        class="icon-ios-more icn-right"></i></a>
+                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
+                                                    <li><a href="portfolio-no-sidebar-2-col.html"> 2 Column </a></li>
+                                                    <li><a href="portfolio-no-sidebar-3-col.html"> 3 Column </a></li>
+                                                    <li><a href="portfolio-no-sidebar-4-col.html"> 4 Column </a></li>
+                                                    <li><a href="portfolio-no-sidebar-6-col.html"> 6 Column </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown dropdown-left dropdown-parent">
+                                                <a class="sub-marker" href="#"> Left Sidebar <i
+                                                        class="icon-ios-more icn-right"></i></a>
+                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
+                                                    <li><a href="portfolio-left-sidebar-2-col.html"> 2 Column </a></li>
+                                                    <li><a href="portfolio-left-sidebar-3-col.html"> 3 Column </a></li>
+                                                    <li><a href="portfolio-left-sidebar-4-col.html"> 4 Column </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown dropdown-left dropdown-parent">
+                                                <a class="sub-marker" href="#"> Right Sidebar <i
+                                                        class="icon-ios-more icn-right"></i></a>
+                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
+                                                    <li><a href="portfolio-right-sidebar-2-col.html"> 2 Column </a></li>
+                                                    <li><a href="portfolio-right-sidebar-3-col.html"> 3 Column </a></li>
+                                                    <li><a href="portfolio-right-sidebar-4-col.html"> 4 Column </a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="portfolio-masonary.html"> Masonary </a></li>
+                                            <li><a href="portfolio-full-width.html"> Full Width </a></li>
+                                            <li><a href="portfolio-full-width-spaced.html"> Full Spaced</a></li>
+                                            <li><a href="portfolio-3-col.html"> Boxed </a></li>
+                                            <li><a href="portfolio-single.html"> Single V1 </a></li>
+                                            <li><a href="portfolio-single-v2.html"> Single V2 </a></li>
+                                            <li><a href="portfolio-single-v3.html"> Single V3 </a></li>
+                                        </ul> -->
+                                    </li>
+                                    <!-- <li class="dropdown dropdown-full-width-g" data-animation="fadeIn">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                                            data-title="Pages">Elements </a>
+                                        <div class="dropdown-menu no-border-radius no-padding" data-adjust="2">
+                                            <div class="row row-autoheight no-gutters">
+                                                <div class="col-lg-3 col-autoheight clearfix">
+                                                    <div class="widget-default clearfix">
+                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
+                                                            <li><a href="element-accordions.html"><i
+                                                                        class="icon-server"></i> ACCORDIONS </a></li>
+                                                            <li><a href="element-animations.html"><i
+                                                                        class="icon-magic"></i> ANIMATIONS </a></li>
+                                                            <li><a href="element-buttons.html"><i class="icon-link"></i>
+                                                                    BUTTONS </a></li>
+                                                            <li><a href="element-carousels.html"><i
+                                                                        class="icon-heart"></i> CAROUSEL </a></li>
+                                                            <li><a href="element-tabs.html"><i class="icon-tasks"></i>
+                                                                    TABS </a></li>
+                                                            <li><a href="element-columns.html"><i
+                                                                        class="icon-th-large"></i> COLUMNS </a></li>
+                                                            <li><a href="element-counters.html"><i
+                                                                        class="icon-time"></i> COUNTERS </a></li>
+                                                            <li><a href="element-data-tables.html"><i
+                                                                        class="icon-table"></i> DATA TABLES </a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-autoheight clearfix">
+                                                    <div class="widget-default clearfix">
+                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
+                                                            <li><a href="element-date-time-pickers.html"><i
+                                                                        class="icon-calendar-11"></i> DATE & TIME
+                                                                    PICKERS </a></li>
+                                                            <li><a href="element-dividers.html"><i
+                                                                        class="icon-indent-right"></i> DIVIDERS </a>
+                                                            </li>
+                                                            <li><a href="element-icon-boxes.html"><i
+                                                                        class="icon-lightbulb"></i> ICON BOXES </a></li>
+                                                            <li><a href="element-galleries.html"><i
+                                                                        class="icon-picture"></i> GALLERIES </a></li>
+                                                            <li><a href="element-header-styles.html"><i
+                                                                        class="icon-edit-pen-1"></i> HEADER STYLES </a>
+                                                            </li>
+                                                            <li><a href="element-icon-lists.html"><i
+                                                                        class="icon-list-alt"></i> ICON LISTS </a></li>
+                                                            <li><a href="element-labels.html"><i
+                                                                        class="icon-plus-circle"></i> LABELS </a></li>
+                                                            <li><a href="element-lightbox.html"><i
+                                                                        class="icon-resize-full"></i> LIGHTBOX </a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-autoheight clearfix">
+                                                    <div class="widget-default clearfix">
+                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
+                                                            <li><a href="element-google-maps.html"><i
+                                                                        class="icon-mark-map"></i> MAPS </a></li>
+                                                            <li><a href="element-media-embed.html"><i
+                                                                        class="icon-play"></i> MEDIA EMBEDS </a></li>
+                                                            <li><a href="element-modal-boxes.html"><i
+                                                                        class="icon-move"></i> MODAL BOXES </a></li>
+                                                            <li><a href="element-paginations.html"><i
+                                                                        class="icon-cogs"></i> PAGINATIONS </a></li>
+                                                            <li><a href="element-progressbar.html"><i
+                                                                        class="icon-progress-2"></i> PROGRESS BARS </a>
+                                                            </li>
+                                                            <li><a href="element-range-sliders.html"><i
+                                                                        class="icon-arrow-move"></i> RANGE SLIDER </a>
+                                                            </li>
+                                                            <li><a href="element-star-ratings.html"><i
+                                                                        class="icon-star-6"></i> STAR RATINGS </a></li>
+                                                            <li><a href="element-pricing-boxes.html"><i
+                                                                        class="icon-dollar-2"></i> PRICING BOXES </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-autoheight clearfix">
+                                                    <div class="widget-default clearfix">
+                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
+                                                            <li><a href="element-blockquotes.html"><i
+                                                                        class="icon-quote-left"></i> BLOCKQUOTES </a>
+                                                            </li>
+                                                            <li><a href="font-icons.html"><i class="icon-laptop-6"></i>
+                                                                    FONT ICONS </a></li>
+                                                            <li><a href="element-sections.html"><i
+                                                                        class="icon-folder-open"></i> SECTIONS </a></li>
+                                                            <li><a href="element-social-icons.html"><i
+                                                                        class="icon-facebook"></i> SOCIAL ICONS </a>
+                                                            </li>
+                                                            <li><a href="element-select-pickers.html"><i
+                                                                        class="icon-select"></i> SELECT PICKER </a></li>
+                                                            <li><a href="element-select-boxes.html"><i
+                                                                        class="icon-columns"></i> SELECT BOXES </a></li>
+                                                            <li><a href="team.html"><i class="icon-select"></i> TEAM
+                                                                    BLOCK </a></li>
+                                                            <li><a href="about.html"><i class="icon-columns"></i> ABOUT
+                                                                    BLOCK </a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <li>
+                                        <a href="team.html"> Team </a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html"> Contact US </a>
+                                    </li>
+                                    <!-- <li class="dropdown cart-list margin-0-sm">
+                                        <a class="dropdown-toggle" data-toggle="dropdown"
+                                            href="javascript:void(0);"><span class="hidden-lg-up"> Shopping Cart
+                                            </span><i class="custom-icon-cart m-marker"></i></a>
+                                        <div class="dropdown-menu-container">
+                                            <div class="dropdown-menu no-border-radius col-lg-1 col-md-4 col-sm-4">
+                                                <h4> Shopping Cart </h4>
+                                                <ul class="s-list no-padding">
+                                                    <li class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
+                                                            <div class="img">
+                                                                <a href="#"><img src="img/img-02.jpg"
+                                                                        alt="image description"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
+                                                            <h6> <a href="#"><strong>Product 1 </strong></a><span
+                                                                    class="text-muted float-right"> x 1 </span></h6>
+                                                            <h6> $199 </h6>
+                                                        </div>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
+                                                            <div class="img">
+                                                                <a href="#"><img src="img/img-02.jpg"
+                                                                        alt="image description"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
+                                                            <h6> <a href="#"><strong>Product 2 </strong></a><span
+                                                                    class="text-muted float-right"> x 2 </span></h6>
+                                                            <h6> $199 </h6>
+                                                        </div>
+                                                    </li>
+                                                    <li class="divider margin-bottom-1"></li>
+                                                    <li class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
+                                                            <h2> Total </h2>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
+                                                            <h2 class="text-right"> $3300 </h2>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="#"
+                                                            class="btn btn-sm btn-block btn-secondary btn-mina btn-mina-rip-br">
+                                                            View Cart </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <!-- <div class="navbar-pos-search">
+                                <a href="#" class="x-search x-search-trigger navbar-link"><i
+                                        class="custom-icon-search"></i></a>
+                                <a href="#" class="x-search icon-close-round navbar-link"><i
+                                        class="icon-line-cross"></i></a>
+                            </div> -->
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <!--/header of the page -->
+            <main>
+                <!-- visual/banner of the page -->
+                <div class="banner banner-home">
+                    <!-- <div class="overlay"></div> -->
+                    <div class="hero-container">
+                        <!-- <img src="./img/svg1.svg" alt="Shape 1" class="floating-shape shape1">
+                        <img src="./img/svg2.svg" alt="Shape 2" class="floating-shape shape2">
+                        <img src="./img/svg3.svg" alt="Shape 3" class="floating-shape shape3">
+                        <img src="./img/svg4.svg" alt="Shape 4" class="floating-shape shape4">
+                        <img src="./img/svg5.svg" alt="Shape 5" class="floating-shape shape5">
+                        <img src="./img/svg6.svg" alt="Shape 6" class="floating-shape shape6"> -->
 
-            <label>Term (Years):</label>
-            <input type="number" id="loan-term" value="">
+                        <!-- Left Section (40%) -->
+                        <div class="hero-text">
+                            <h4>PERSONAL, BUSINESS, LOAN, FINANCE</h4>
+                            <h1>JOB DONE</h1>
+                            <p>We provide the best loan solutions in Adelaide, Australia. Let us help you achieve your
+                                financial goals!</p>
+                        </div>
+                        <!-- Right Section (60%) -->
+                        <div class="hero-info">
+                            <div class="loan-calc-box">
+                                <div class="loan-topper">
+                                    <div class="loan-heading">
+                                        <h4>MRKB Finance Loan Calculator</h4>
+                                    </div>
+                                    <div class="loan-reset">
+                                        <button id="loan-reset">Reset</button>
+                                    </div>
+                                </div>
+                                <div class="input-section">
+                                    <div class="input-section1">
+                                        <div class="input-loan">
+                                            <label>Principal Amount (AUD):</label>
+                                            <input type="number" id="loan-amount" value=""
+                                                placeholder="Enter Loan Amount *" min="0">
+                                        </div>
+                                        <div class="input-year">
+                                            <label>Term (Years):</label>
+                                            <input type="number" id="loan-term" value="" placeholder="Enter Loan Term *"
+                                                min="0.5" max="30" step="0.5">
+                                        </div>
+                                        <div class="input-int">
+                                            <label>Interest Rate (%):</label>
+                                            <input type="number" id="interest-rate" value=""
+                                                placeholder="Enter Interest Rate *" min="0" max="9.99" step="0.01">
+                                        </div>
+                                        <div class="input-repay">
+                                            <label>Additional Repayments (AUD)</label>
+                                            <input type="number" id="add-repay" value=""
+                                                placeholder="Enter Additional Repayments per month" min="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-section">
+                                    <h5 class="result-title">Your Repayment Plan</h5>
+                                    <div class="repay-details">
+                                        <div class="repay-detail3">
+                                            <div class="repay-freq">
+                                                <h5>Repayment Frequency:</h5>
+                                                <select name="repay-freq" id="repay-freq">
+                                                    <option value="monthly">Monthly</option>
+                                                    <option value="fortnightly">Fortnightly</option>
+                                                    <option value="weekly">Weekly</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="repay-detail1">
+                                            <div class="result-repay">
+                                                <h5>Repayment per time period:</h5>
+                                                <span id="repay-amount">$0</span>
+                                            </div>
+                                            <div class="result-int">
+                                                <h5>Variable Rate:</h5>
+                                                <span id="variable-rate">0%</span>
+                                            </div>
+                                        </div>
+                                        <div class="repay-detail2">
+                                            <div class="result-total">
+                                                <h5>Total Loan Repayment:</h5>
+                                                <span id="total-repayment">$0</span>
+                                            </div>
+                                            <div class="result-total-int">
+                                                <h5>Total Interest Paid:</h5>
+                                                <span id="total-interest">$0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/visual/banner of the page -->
+                <!-- main content wrapper -->
+                <div class="content-wrapper">
+                    <section class="content-block">
+                        <div class="container">
+                            <div class="block-heading bottom-space">
+                                <h3 class="block-top-heading">THE COMPREHENSIVE FINANCIAL SOLUTIONS</h3>
+                                <h2 class="block-main-heading">DESIGNED FOR YOU!</h2>
+                                <span class="block-sub-heading">We pride ourselves on our service and are available to
+                                    help you each and everyday.</span>
+                                <div class="divider"><img src="img/divider.png" alt="images description"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="bottom-space-small-only">
+                                        <p>Financing and loans play a vital role in achieving personal and business
+                                            goals. For individuals, loans provide access to funds for important life
+                                            events like education, weddings, or home improvements, offering financial
+                                            flexibility when it’s needed most. For businesses, loans are essential for
+                                            growth, helping to fund new ventures, expand operations, or manage cash flow
+                                            during challenging times. With right financing advices, you can win in life!
+                                        </p>
+                                        <p class="famous-quote">"Finance is not merely about making money. It’s about
+                                            achieving our deep
+                                            goals and protecting the fruits of our labor."<br>
+                                            – Robert J. Shiller</p>
+                                        <!-- <div class="btn-container top-m-space">
+                                            <a href="#" class="btn btn-trans-gray">VIEW SERVICES</a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="bottom-s-space">
+                                        <p>Explore our ourstanding and fast services specially made for you! </p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-9">
+                                            <ul class="content-links bold-content-links">
+                                                <li><a href="personal-loan.html">PERSONAL LOANS <span>>></span></a></li>
+                                                <li><a href="home-loan.html">FIRST & NEXT HOME LOANS <span>>></span></a>
+                                                </li>
+                                                <li><a href="business-commercial.html">BUSINESS & COMMERCIAL LOANS
+                                                        <span>>></span></a></li>
+                                                <li><a href="asset-financing.html">ASSET FINANCING <span>>></span></a>
+                                                </li>
+                                                <li><a href="investment-loan.html">INVESTMENT LOANS <span>>></span></a>
+                                                </li>
+                                                <li><a href="smsf-loan.html">SMSF LOANS <span>>></span></a></li>
+                                                <li><a href="vehicle-loan.html">VEHICLE AND AUTOMOBILE LOANS
+                                                        <span>>></span></a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- <div class="col-sm-6">
+                                            <ul class="content-links">
+                                                <li><a href="#">DATABASE DESIGN</a></li>
+                                                <li><a href="#">TECHNICAL DOCUMENTATION</a></li>
+                                                <li><a href="#">SOFTWARE ARCHITECTURE</a></li>
+                                                <li><a href="#">SEARCH OPTIMIZATION</a></li>
+                                                <li><a href="#">WEB PROMOTIONS</a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="content-block">
+                        <div class="container">
+                            <h3 class="text-center element-heading pb-5">Why work with us?</h3>
+                            <div class="tab-container tab-black tab-center-container">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs tab-button-nav" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tab13" role="tab"> >>
+                                            Transparency</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tab14" role="tab"> >> Unique
+                                            Solutions</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tab15" role="tab"> >> Fast and
+                                            Efficient Processing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tab16" role="tab"> >> Support</a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="top-m-space tab-content">
+                                    <div class="tab-pane fade show active" id="tab13" role="tabpanel">
+                                        <p>A finance and loan agency must prioritize honesty and clarity in all its
+                                            dealings. Transparency ensures clients fully understand the terms, interest
+                                            rates, fees, and repayment conditions before committing to any agreement.
+                                            For example, disclosing exact interest rates (e.g., 6% per annum) and
+                                            clearly explaining repayment schedules (e.g., 12, 24, or 36 months) avoids
+                                            confusion. </p>
+                                        <p>Providing upfront details on any processing fees (e.g., $200) reflects the
+                                            agency's commitment to ethical practices. When clients feel informed and
+                                            confident in their decisions, it reduces anxiety and promotes satisfaction.
+                                            By addressing client queries within 24 hours, the agency demonstrates
+                                            reliability and reinforces its reputation as a trusted partner in financial
+                                            growth.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab14" role="tabpanel">
+                                        <p>Every client’s financial needs and circumstances are unique. A reputable
+                                            finance and loan agency should offer tailored solutions to meet individual
+                                            and business requirements. For instance, personal loans ranging from $5,000
+                                            to $50,000 or business loans up to $500,000 provide flexibility for
+                                            different needs. Flexible repayment options, such as monthly installments of
+                                            $300 to $2,000, ensure affordability.</p>
+                                        <p>Whether it’s a personal loan for unexpected expenses or a business loan for
+                                            expansion, these options are designed to align with specific goals. Tailored
+                                            solutions also ensure that clients receive appropriate financial products
+                                            without overextending their budget, demonstrating the agency’s dedication to
+                                            solving problems and creating opportunities.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab15" role="tabpanel">
+                                        <p>In the fast-paced world of finance, time is often a critical factor. A
+                                            reliable finance and loan agency must prioritize quick and efficient loan
+                                            processing. With streamlined procedures, approvals can take as little as
+                                            24-48 hours, ensuring clients receive funds promptly. Emergency loans, for
+                                            example, can be processed within one business day, while larger loans may
+                                            require 3-5 days for verification.</p>
+                                        <p>Leveraging modern technology, such as online applications, reduces the need
+                                            for lengthy paperwork and speeds up decisions. Whether clients need $1,000
+                                            for a personal emergency or $100,000 for a business expansion, fast and
+                                            efficient services enhance the agency's reputation for reliability and
+                                            responsiveness.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab16" role="tabpanel">
+                                        <p>Exceptional customer support is the backbone of any successful finance and
+                                            loan agency. Clients need guidance at every stage, from application to
+                                            repayment. A dedicated support team available 7 days a week ensures clients
+                                            feel valued and supported throughout their financial journey. Offering
+                                            multiple communication channels, such as phone (24/7 helpline), email, and
+                                            online chat, makes it easy for clients to reach out with questions.
+                                            Proactive reminders for repayments, such as alerts sent 5 days before the
+                                            due date, help clients stay on track. Addressing inquiries within 48 hours
+                                            and offering financial planning tips builds trust and loyalty, creating
+                                            long-term partnerships with satisfied clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="demo-wrapper">
+                        <!-- <h3 class="text-center element-heading">Counter - Solid Background</h3> -->
+                        <div class="content-block count-block text-center p-0 solid-block">
+                            <div class="container-fluid">
+                                <div class="row no-gutters">
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="col-wrap">
+                                            <div class="icon">
+                                                <span class="custom-icon-smile"></span>
+                                            </div>
+                                            <h3 class="number">40</h3>
+                                            <div class="text text-uppercase">SATISFIED CLIENTS</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="col-wrap">
+                                            <div class="icon">
+                                                <span class="custom-icon-projects"></span>
+                                            </div>
+                                            <h3 class="number">76</h3>
+                                            <div class="text text-uppercase">Total Loan Approved</div>
+                                        </div>
+                                    </div>
 
-            <label>Interest Rate (%):</label>
-            <input type="number" id="interest-rate" value="">
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="col-wrap">
+                                            <div class="icon">
+                                                <span><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                                            </div>
+                                            <h3 class="number">5<span></span></h3>
+                                            <div class="text text-uppercase">Million AUD Fund Disbursed</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="col-wrap">
+                                            <div class="icon">
+                                                <span><i class="fa-regular fa-handshake"></i></span>
+                                            </div>
+                                            <h3 class="number">25<span></span></h3>
+                                            <div class="text text-uppercase">Partners</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="content-block quotation-block quotation-block-v7 black-overlay-6 parallax"
+                        data-stellar-background-ratio="0.55">
+                        <div class="container">
+                            <div class="inner-wrapper">
+                                <div class="block-heading text-right">
+                                    <h3 class="block-top-heading text-white">CORPORATE VENTURES</h3>
+                                    <h2 class="block-main-heading text-white">NO COMPROMISE</h2>
+                                    <span class="block-sub-heading text-white">We really love what we do & our work on
+                                        every project truly reflects that.</span>
+                                    <div class="divider"><img src="img/divider-white.png" alt="images description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="content-block">
+                        <h3 class="text-center element-heading pb-5">FAQ's</h3>
+                        <div class="accordion-container">
+                            <div id="accordion2" class="panel-icon" role="tablist" aria-multiselectable="true">
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingSeven">
+                                        <h5 class="mb-0"><a data-toggle="collapse" data-parent="#accordion2"
+                                                href="#collapseSeven" aria-expanded="true"
+                                                aria-controls="collapseSeven">What types of loans do you offer?</a></h5>
+                                    </div>
+                                    <div id="collapseSeven" class="collapse show" role="tabpanel"
+                                        aria-labelledby="headingSeven">
+                                        <div class="card-block">
+                                            <p>We offer a variety of loans to meet your needs, including personal loans,
+                                                home loans, business loans, debt consolidation loans, and more. Each
+                                                loan is tailored to suit your unique requirements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingEight">
+                                        <h5 class="mb-0"><a class="collapsed" data-toggle="collapse"
+                                                data-parent="#accordion2" href="#collapseEight" aria-expanded="false"
+                                                aria-controls="collapseTwo">How long does it take to get a loan
+                                                approved?</a></h5>
+                                    </div>
+                                    <div id="collapseEight" class="collapse" role="tabpanel"
+                                        aria-labelledby="headingEight">
+                                        <div class="card-block">
+                                            <p>The approval process typically takes 1–3 business days, depending on the
+                                                loan type and the documentation provided. We strive to ensure a fast and
+                                                efficient process for all our clients.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingNine">
+                                        <h5 class="mb-0"><a class="collapsed" data-toggle="collapse"
+                                                data-parent="#accordion2" href="#collapseNine" aria-expanded="false"
+                                                aria-controls="collapseNine">Do you offer flexible repayment
+                                                options?</a></h5>
+                                    </div>
+                                    <div id="collapseNine" class="collapse" role="tabpanel"
+                                        aria-labelledby="headingNine">
+                                        <div class="card-block">
+                                            <p>Yes, we provide flexible repayment plans to suit your budget and
+                                                financial situation. Our team will work with you to customize a
+                                                repayment schedule that aligns with your goals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-            <label>Additional Repayments ($):</label>
-            <input type="number" id="extra-repayment" value="">
+                    <div class="container">
+                        <div class="logo-container">
+                            <div class="owl-carousel logo-slide" id="waituk-owl-slide-4">
+                                <div class="slide-item">
+                                    <img src="img/Frame 130.png" alt="images description">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="img/Frame 131.png" alt="images description">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="img/Frame 132.png" alt="images description">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="img/Frame 133.png" alt="images description">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="img/Frame 134.png" alt="images description">
+                                </div>
+                                <div class="slide-item">
+                                    <img src="img/Frame 135.png" alt="images description">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="content-block">
+                        <div class="container">
+                            <div class="demo-wrapper">
+                                <h3 class="text-center element-heading">What our clients says about us?</h3>
+                                <div class="testimonial-container text-center">
+                                    <div class="owl-carousel testimonial-slide" id="waituk-owl-slide-3">
+                                        <div class="slide-item">
+                                            <div class="team-wrap">
+                                                <div class="img-block">
+                                                    <img src="img/people-01.jpg" alt="images description">
+                                                </div>
+                                                <div class="text-wrap">
+                                                    <h2>Declan Southwell</h2>
+                                                    <span class="designation bottom-m-space">The Coffee Club,
+                                                        Elizabeth</span>
+                                                    <p>"Thanks to Kushal from MRKB Fin., I secured a business loan
+                                                        quickly and easily. Their team guided me every step of the way,
+                                                        and now my Adelaide café is thriving. Excellent service and
+                                                        support—highly recommended!"</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide-item">
+                                            <div class="team-wrap">
+                                                <div class="img-block">
+                                                    <img src="img/people-02.jpg" alt="images description">
+                                                </div>
+                                                <div class="text-wrap">
+                                                    <h2>Trevor Merrick</h2>
+                                                    <span class="designation bottom-m-space">First-Time Home
+                                                        Buyer</span>
+                                                    <p>"MRKB made buying my first home in Adelaide a stress-free
+                                                        experience. Their transparent process and competitive rates were
+                                                        fantastic. The team answered all my questions and helped me
+                                                        achieve my dream of owning a home."</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slide-item">
+                                            <div class="team-wrap">
+                                                <div class="img-block">
+                                                    <img src="img/people-03.jpg" alt="images description">
+                                                </div>
+                                                <div class="text-wrap">
+                                                    <h2>Walter Kauvei</h2>
+                                                    <span class="designation bottom-m-space">Personal Loan Client</span>
+                                                    <p>"I needed funds for an emergency, and MRKB delivered within 24
+                                                        hours. Their fast approval process and clear communication were
+                                                        lifesavers. I’m so grateful for their help and professionalism.
+                                                        Best loan agency in Adelaide!"</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!--/main content wrapper -->
+            </main>
         </div>
-
-        <div class="result-section">
-            <h2>Your Monthly Repayments</h2>
-            <div>
-                <strong>Monthly Payment:</strong> <span id="monthly-payment">$0</span>
+        <!-- footer of the pagse -->
+        <footer class="footer footer-v1 footer-v2">
+            <div class="content-block footer-main pb-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="footer-logo">
+                                <img src="img/logo.png" alt="image-description">
+                            </div>
+                            <div class="mt-4">
+                                <a href="tel: +61476012064">
+                                    <h5 style="color: #87888F; font-size: 16px;">+61476012064</h5>
+                                </a>
+                                <h5 style="color: #87888F; font-size: 16px;">1 Chester Avenue, Clearview, SA 5085</h5>
+                                <a>
+                                    <h5 style="color: #87888F; font-size: 16px;">info@mrkbfinance.com.au</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4">
+                            <div class="waituk_newsletter-form newsletter-v1 mt-2">
+                                <form action="#" method="post">
+                                    <fieldset class="clearfix">
+                                        <div class="form-group input-holder">
+                                            <input type="email" class="form-control" placeholder="Email Address">
+                                            <button type="submit" class="btn"><i class="fa fa-send"></i></button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="my-4">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt</p>
+                            </div>
+                        </div> -->
+                        <div class="col-lg-4">
+                            <h4>Services</h4>
+                            <div class="footer-nav">
+                                <ul>
+                                    <li><a href="personal-loan.html">PERSONAL LOANS</a></li>
+                                    <li><a href="home-loan.html">FIRST & NEXT HOME LOANS</a></li>
+                                    <li><a href="business-commercial.html">BUSINESS & COMMERCIAL LOANS</a></li>
+                                    <li><a href="asset-financing.html">ASSET FINANCING</a></li>
+                                    <li><a href="investment-loan.html">INVESTMENT LOANS</a></li>
+                                    <li><a href="smsf-loan.html">SMSF LOANS</a></li>
+                                    <li><a href="vehicle-loan.html">VEHICLE AND AUTOMOBILE LOANS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <h4>Company</h4>
+                            <div class="footer-nav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#">Legal</a></li>
+                                    <li><a href="#">Policies</a></li>
+                                    <li><a href="login.php">Admin <i class="fa-solid fa-lock"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-2">
+                            <h4>In the News</h4>
+                            <div class="footer-nav">
+                                <ul>
+                                    <li><a href="#">Press</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Sales</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-4" style="text-align: center;">
+                                <p>Copyright 2025 - <span style="font-weight: 600; color: #fff;">MRKB FINANCE</span>
+                                    managed by <a href="https://www.prelette.com"
+                                        style="color: #ff9d00; font-weight: 600;" target="_blank"
+                                        rel="noopener noreferrer">prelette.com</a>
+                                </p>
+                            </div>
+                            <!-- <div class="col-md-6">
+                                <ul class="social-network with-text">
+                                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                    <li><a href="#"><span class="icon-google-plus"></span></a></li>
+                                    <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                                    <li><a href="#"><span class="icon-dribbble"></span></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <strong>Total Loan Repayment:</strong> <span id="total-repayment">$0</span>
-            </div>
-            <div>
-                <strong>Total Interest Paid:</strong> <span id="total-interest">$0</span>
-            </div>
-        </div>
+        </footer>
+        <!--/footer of the page -->
     </div>
-    <script src="try.js"></script>
+    <!-- search form wrapper -->
+
+    <a href="#" class="section-scroll" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- jquery library -->
+    <script src="vendors/jquery/jquery-2.1.4.min.js"></script>
+    <!-- external scripts -->
+    <script src="vendors/tether/dist/js/tether.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/stellar/jquery.stellar.min.js"></script>
+    <script src="vendors/isotope/javascripts/isotope.pkgd.min.js"></script>
+    <script src="vendors/isotope/javascripts/packery-mode.pkgd.js"></script>
+    <script src="vendors/owl-carousel/dist/owl.carousel.js"></script>
+    <script src="vendors/waypoint/waypoints.min.js"></script>
+    <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+    <script src="vendors/fancyBox/source/jquery.fancybox.pack.js"></script>
+    <script src="vendors/fancyBox/source/helpers/jquery.fancybox-thumbs.js"></script>
+    <script src="vendors/image-stretcher-master/image-stretcher.js"></script>
+    <script src="vendors/wow/wow.min.js"></script>
+    <script src="vendors/rateyo/jquery.rateyo.js"></script>
+    <script src="vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="vendors/bootstrap-slider-master/src/js/bootstrap-slider.js"></script>
+    <script src="js/mega-menu.js"></script>
+    <script src="js/calc.js"></script>
+    <!-- custom jquery script -->
+    <script src="js/jquery.main.js"></script>
+    <!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="vendors/rev-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="vendors/rev-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <!-- SNOW ADD ON -->
+    <script type="text/javascript"
+        src="vendors/rev-slider/revolution-addons/snow/revolution.addon.snow.min.js"></script>
+    <!-- revolutions slider script -->
+    <script src="js/revolution.js"></script>
 </body>
 
 </html>

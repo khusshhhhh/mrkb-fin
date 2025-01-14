@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalInterestOutput = document.getElementById("total-interest");
   const variableRateOutput = document.getElementById("variable-rate");
 
+  const resetButton = document.getElementById("loan-reset");
+
   function calculateLoan() {
     const principal = parseFloat(loanAmountInput.value);
     const termInYears = parseFloat(loanTermInput.value);
@@ -58,6 +60,19 @@ document.addEventListener("DOMContentLoaded", function () {
     variableRateOutput.textContent = `${interestRate.toFixed(2)}%`;
   }
 
+  function resetCalculator() {
+    loanAmountInput.value = "";
+    loanTermInput.value = "";
+    interestRateInput.value = "";
+    addRepayInput.value = "";
+    repayFreqInput.value = "monthly";
+
+    monthlyPaymentOutput.textContent = "$0";
+    totalRepaymentOutput.textContent = "$0";
+    totalInterestOutput.textContent = "$0";
+    variableRateOutput.textContent = "0%";
+  }
+
   // Attach event listeners to inputs for real-time updates
   [
     loanAmountInput,
@@ -68,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
   ].forEach((input) => {
     input.addEventListener("input", calculateLoan);
   });
+
+  // Attach event listener to reset button
+  resetButton.addEventListener("click", resetCalculator);
 
   // Initial display
   calculateLoan();
