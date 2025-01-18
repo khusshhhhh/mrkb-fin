@@ -31,12 +31,12 @@
 
 .hero-text h4 {
   margin-bottom: 20px;
-  color: white;
+  color: black;
 }
 
 .hero-text h1 {
   font-size: 6rem;
-  color: white;
+  color: black;
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -64,7 +64,7 @@
 .hero-text p {
   font-size: 1.2rem;
   line-height: 1.5;
-  color: white;
+  color: black;
 }
 
 .hero-info {

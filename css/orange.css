@@ -12409,7 +12409,7 @@ a.full-width-icon:hover .social-text {
   /*HEADER COLOR*/
 
   .main-header.header-white.transparent .navbar .navbar-nav > li > a {
-    color: white;
+    color: black;
   }
 
   .main-header.header-white.transparent .navbar-pos-search a.x-search-trigger,
