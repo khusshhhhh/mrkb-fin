@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'db_connection.php';
-include 'crm_header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
