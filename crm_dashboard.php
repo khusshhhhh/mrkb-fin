@@ -16,7 +16,7 @@ $total_clients = $conn->query("SELECT COUNT(DISTINCT email) FROM clients")->fetc
 $total_revenue = $conn->query("SELECT SUM(amount) FROM payments")->fetch_row()[0] ?? 0;
 
 //Total Expenses
-$total_revenue = $conn->query("SELECT SUM(amount) FROM expenses")->fetch_row()[0] ?? 0;
+$total_expense = $conn->query("SELECT SUM(amount) FROM expenses")->fetch_row()[0] ?? 0;
 
 // Fetch monthly revenue data for the chart
 $monthly_revenue = array_fill(0, 12, 0); // Initialize array with 12 months (0 values)
