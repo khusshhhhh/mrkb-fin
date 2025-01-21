@@ -18,17 +18,20 @@ $total_revenue = $conn->query("SELECT SUM(amount) FROM payments")->fetch_row()[0
 //Total Expenses
 $total_expense = $conn->query("SELECT SUM(amount) FROM expenses")->fetch_row()[0] ?? 0;
 
-// Fetch monthly revenue data for the chart
-$monthly_revenue = array_fill(0, 12, 0); // Initialize array with 12 months (0 values)
+// Get revenue data for the chart
+$revenueData = $conn->query("
+    SELECT DATE(payment_date) AS date, SUM(amount) AS total 
+    FROM payments 
+    GROUP BY DATE(payment_date) 
+    ORDER BY DATE(payment_date) ASC
+");
 
-$stmt = $conn->prepare("SELECT MONTH(payment_date) AS month, SUM(amount) AS revenue FROM payments GROUP BY month");
-$stmt->execute();
-$result = $stmt->get_result();
-while ($row = $result->fetch_assoc()) {
-    $monthly_revenue[$row['month'] - 1] = $row['revenue']; // Month index in array (0-based)
+$dates = [];
+$revenues = [];
+while ($row = $revenueData->fetch_assoc()) {
+    $dates[] = $row['date'];
+    $revenues[] = $row['total'];
 }
-
-$chart_revenue = json_encode($monthly_revenue);
 ?>
 
 <div class="container mt-4">
@@ -122,7 +125,6 @@ $chart_revenue = json_encode($monthly_revenue);
             }
         }
     });
-
 </script>
 
 <?php include 'crm_footer.php'; ?>
