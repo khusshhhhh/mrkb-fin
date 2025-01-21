@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="bg-light">
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card shadow p-4" style="width: 350px;">
-            <h3 class="text-center">Login</h3>
+            <h3 class="text-center">MRKB | CRM</h3>
             <?php if (isset($error))
                 echo "<div class='alert alert-danger'>$error</div>"; ?>
             <form method="POST">
