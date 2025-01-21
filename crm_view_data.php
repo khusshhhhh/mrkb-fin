@@ -1,10 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: crm_login.php");
-    exit;
-}
-
 include 'db_connection.php';
 include 'crm_header.php';
 
