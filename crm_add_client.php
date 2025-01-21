@@ -8,13 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phone'] ?? null;
     $email = $_POST['email'] ?? null;
     $service = $_POST['service'] ?? null;
-    $message = $_POST['message'] ?? null;
-    $state = $_POST['state'] ?? null;
-    $post_code = $_POST['post_code'] ?? null;
-    $created_date = date("Y-m-d");
+    $note = $_POST['note'] ?? null;
 
-    $stmt = $conn->prepare("INSERT INTO contact_us (name, phone, email, service, message, state, post_code, created_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $name, $phone, $email, $service, $message, $state, $post_code, $created_date);
+    $stmt = $conn->prepare("INSERT INTO clients (name, phone, email, service, note) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $name, $phone, $email, $service, $note);
 
     if ($stmt->execute()) {
         header("Location: crm_clients.php?msg=Client added successfully");
@@ -32,13 +29,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<div class='alert alert-danger'>$error</div>"; ?>
 
     <form method="POST">
-        <div class="mb-3"><input type="text" name="name" class="form-control" placeholder="Client Name"></div>
-        <div class="mb-3"><input type="text" name="phone" class="form-control" placeholder="Phone"></div>
-        <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Email"></div>
-        <div class="mb-3"><input type="text" name="service" class="form-control" placeholder="Service"></div>
-        <div class="mb-3"><textarea name="message" class="form-control" placeholder="Message"></textarea></div>
-        <div class="mb-3"><input type="text" name="state" class="form-control" placeholder="State"></div>
-        <div class="mb-3"><input type="text" name="post_code" class="form-control" placeholder="Post Code"></div>
+        <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Client Name" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="phone" class="form-control" placeholder="Phone">
+        </div>
+        <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="service" class="form-control" placeholder="Service">
+        </div>
+        <div class="mb-3">
+            <textarea name="note" class="form-control" placeholder="Admin Note (Only visible to admin)"></textarea>
+        </div>
         <button type="submit" class="btn btn-success">Add Client</button>
         <a href="crm_clients.php" class="btn btn-secondary">Cancel</a>
     </form>

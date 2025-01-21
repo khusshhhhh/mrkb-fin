@@ -21,21 +21,25 @@ if (!isset($_SESSION['user_id'])) {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="crm_dashboard.php">CRM System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_dashboard.php">Dashboard</a>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info text-white"
+                            href="crm_dashboard.php">Dashboard</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_clients.php">Clients</a>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info text-white"
+                            href="crm_clients.php">Clients</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_payments.php">Payments</a>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info text-white"
+                            href="crm_payments.php">Payments</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_expenses.php">Expenses</a>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info text-white"
+                            href="crm_expenses.php">Expenses</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_view_data.php">Contect
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info text-white"
+                            href="crm_view_data.php">Contect
                             From</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="crm_tasks.php">Tasks</a></li> -->
                 </ul>

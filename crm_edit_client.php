@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
 }
 
 $id = intval($_GET['id']);
-$stmt = $conn->prepare("SELECT * FROM contact_us WHERE id = ?");
+$stmt = $conn->prepare("SELECT * FROM clients WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $client = $stmt->get_result()->fetch_assoc();
@@ -19,12 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $service = $_POST['service'];
-    $message = $_POST['message'];
-    $state = $_POST['state'];
-    $post_code = $_POST['post_code'];
+    $note = $_POST['note'];
 
-    $stmt = $conn->prepare("UPDATE contact_us SET name=?, phone=?, email=?, service=?, message=?, state=?, post_code=? WHERE id=?");
-    $stmt->bind_param("sssssssi", $name, $phone, $email, $service, $message, $state, $post_code, $id);
+    $stmt = $conn->prepare("UPDATE clients SET name=?, phone=?, email=?, service=?, note=? WHERE id=?");
+    $stmt->bind_param("sssssi", $name, $phone, $email, $service, $note, $id);
 
     if ($stmt->execute()) {
         header("Location: crm_clients.php?msg=Client updated successfully");
@@ -42,20 +40,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<div class='alert alert-danger'>$error</div>"; ?>
 
     <form method="POST">
-        <div class="mb-3"><input type="text" name="name" class="form-control"
-                value="<?= htmlspecialchars($client['name']); ?>"></div>
-        <div class="mb-3"><input type="text" name="phone" class="form-control"
-                value="<?= htmlspecialchars($client['phone']); ?>"></div>
-        <div class="mb-3"><input type="email" name="email" class="form-control"
-                value="<?= htmlspecialchars($client['email']); ?>"></div>
-        <div class="mb-3"><input type="text" name="service" class="form-control"
-                value="<?= htmlspecialchars($client['service']); ?>"></div>
-        <div class="mb-3"><textarea name="message"
-                class="form-control"><?= htmlspecialchars($client['message']); ?></textarea></div>
-        <div class="mb-3"><input type="text" name="state" class="form-control"
-                value="<?= htmlspecialchars($client['state']); ?>"></div>
-        <div class="mb-3"><input type="text" name="post_code" class="form-control"
-                value="<?= htmlspecialchars($client['post_code']); ?>"></div>
+        <div class="mb-3">
+            <input type="text" name="name" class="form-control" value="<?= htmlspecialchars($client['name']); ?>"
+                required>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="phone" class="form-control" value="<?= htmlspecialchars($client['phone']); ?>">
+        </div>
+        <div class="mb-3">
+            <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($client['email']); ?>">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="service" class="form-control" value="<?= htmlspecialchars($client['service']); ?>">
+        </div>
+        <div class="mb-3">
+            <textarea name="note" class="form-control"><?= htmlspecialchars($client['note']); ?></textarea>
+        </div>
         <button type="submit" class="btn btn-success">Update Client</button>
         <a href="crm_clients.php" class="btn btn-secondary">Cancel</a>
     </form>

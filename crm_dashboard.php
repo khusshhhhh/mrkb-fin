@@ -79,7 +79,7 @@ $chart_revenue = json_encode($monthly_revenue);
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- <script>
+<script>
     var ctx = document.getElementById('revenueChart').getContext('2d');
     document.getElementById('revenueChart').width = 600;  // Set width
     document.getElementById('revenueChart').height = 300; // Set height
@@ -87,24 +87,53 @@ $chart_revenue = json_encode($monthly_revenue);
     var revenueChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            labels: <?php echo json_encode($dates); ?>,
             datasets: [{
                 label: 'Revenue ($)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                data: <?php echo json_encode($revenues); ?>,
+                borderColor: '#4CAF50',
+                backgroundColor: 'rgba(76, 175, 80, 0.2)',
                 borderWidth: 2,
-                data: <?= $chart_revenue; ?>,
-                fill: true
+                pointBackgroundColor: '#4CAF50',
+                pointBorderColor: '#fff',
+                pointRadius: 5,
+                tension: 0.4 // Smooth curve
             }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
+            responsive: false, // Disable auto-resizing
+            maintainAspectRatio: false, // Allows custom size
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                }
+            },
             scales: {
-                y: { beginAtZero: true }
+                x: {
+                    grid: {
+                        display: false // Removes vertical grid lines
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        maxTicksLimit: 12
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: "rgba(200, 200, 200, 0.3)" // Light grey horizontal grid lines
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            return '$' + value; // Add dollar sign to y-axis values
+                        }
+                    }
+                }
             }
         }
     });
-</script> -->
+
+</script>
 
 <?php include 'crm_footer.php'; ?>

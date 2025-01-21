@@ -9,18 +9,29 @@ if (!isset($_GET['id'])) {
 }
 
 $id = intval($_GET['id']);
-$stmt = $conn->prepare("SELECT * FROM payments WHERE id = ?");
+
+// Fetch payment details
+$stmt = $conn->prepare("
+    SELECT payments.*, clients.name AS client_name
+    FROM payments
+    LEFT JOIN clients ON payments.client_id = clients.id
+    WHERE payments.id = ?
+");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $payment = $stmt->get_result()->fetch_assoc();
 
+// Fetch clients for dropdown
+$clients = $conn->query("SELECT id, name FROM clients ORDER BY name ASC");
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $client_name = $_POST['client_name'];
+    $client_id = $_POST['client_id'];
     $amount = $_POST['amount'];
     $payment_date = $_POST['payment_date'];
+    $note = $_POST['note'];
 
-    $stmt = $conn->prepare("UPDATE payments SET client_name=?, amount=?, payment_date=? WHERE id=?");
-    $stmt->bind_param("sdsi", $client_name, $amount, $payment_date, $id);
+    $stmt = $conn->prepare("UPDATE payments SET client_id=?, amount=?, payment_date=?, note=? WHERE id=?");
+    $stmt->bind_param("idssi", $client_id, $amount, $payment_date, $note, $id);
 
     if ($stmt->execute()) {
         header("Location: crm_payments.php?msg=Payment updated successfully");
@@ -38,12 +49,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<div class='alert alert-danger'>$error</div>"; ?>
 
     <form method="POST">
-        <div class="mb-3"><input type="text" name="client_name" class="form-control"
-                value="<?= htmlspecialchars($payment['client_name']); ?>"></div>
-        <div class="mb-3"><input type="number" name="amount" step="0.01" class="form-control"
-                value="<?= htmlspecialchars($payment['amount']); ?>"></div>
-        <div class="mb-3"><input type="date" name="payment_date" class="form-control"
-                value="<?= htmlspecialchars($payment['payment_date']); ?>"></div>
+        <div class="mb-3">
+            <label for="client_id" class="form-label">Client Name</label>
+            <select name="client_id" class="form-control" required>
+                <?php while ($row = $clients->fetch_assoc()) { ?>
+                    <option value="<?= $row['id']; ?>" <?= ($row['id'] == $payment['client_id']) ? 'selected' : ''; ?>>
+                        <?= htmlspecialchars($row['name']); ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="number" name="amount" step="0.01" class="form-control"
+                value="<?= htmlspecialchars($payment['amount']); ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="payment_date" class="form-label">Payment Date</label>
+            <input type="date" name="payment_date" class="form-control"
+                value="<?= htmlspecialchars($payment['payment_date']); ?>" required>
+        </div>
+        <div class="mb-3">
+            <label for="note" class="form-label">Note</label>
+            <textarea name="note" class="form-control"><?= htmlspecialchars($payment['note']); ?></textarea>
+        </div>
         <button type="submit" class="btn btn-success">Update Payment</button>
         <a href="crm_payments.php" class="btn btn-secondary">Cancel</a>
     </form>

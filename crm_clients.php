@@ -4,7 +4,7 @@ include 'db_connection.php';
 include 'crm_header.php';
 
 // Fetch all clients
-$result = $conn->query("SELECT * FROM contact_us ORDER BY id DESC");
+$result = $conn->query("SELECT * FROM clients ORDER BY id DESC");
 ?>
 
 <div class="container mt-4">
@@ -19,6 +19,7 @@ $result = $conn->query("SELECT * FROM contact_us ORDER BY id DESC");
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Service</th>
+                <th>Note</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@ $result = $conn->query("SELECT * FROM contact_us ORDER BY id DESC");
                     <td><?= htmlspecialchars($row['phone']); ?></td>
                     <td><?= htmlspecialchars($row['email']); ?></td>
                     <td><?= htmlspecialchars($row['service']); ?></td>
+                    <td><?= htmlspecialchars($row['note']); ?></td>
                     <td>
                         <a href="crm_edit_client.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                         <a href="crm_delete_client.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger"

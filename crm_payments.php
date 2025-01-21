@@ -3,8 +3,14 @@ session_start();
 include 'db_connection.php';
 include 'crm_header.php';
 
-// Fetch all payments
-$result = $conn->query("SELECT * FROM payments ORDER BY id DESC");
+// Fetch all payments with client names
+$query = "
+    SELECT payments.id, clients.name AS client_name, payments.amount, payments.payment_date, payments.note
+    FROM payments
+    LEFT JOIN clients ON payments.client_id = clients.id
+    ORDER BY payments.id DESC
+";
+$result = $conn->query($query);
 ?>
 
 <div class="container mt-4">
@@ -18,6 +24,7 @@ $result = $conn->query("SELECT * FROM payments ORDER BY id DESC");
                 <th>Client Name</th>
                 <th>Amount</th>
                 <th>Payment Date</th>
+                <th>Note</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,9 +32,10 @@ $result = $conn->query("SELECT * FROM payments ORDER BY id DESC");
             <?php while ($row = $result->fetch_assoc()) { ?>
                 <tr>
                     <td><?= $row['id']; ?></td>
-                    <td><?= htmlspecialchars($row['client_name']); ?></td>
+                    <td><?= htmlspecialchars($row['client_name'] ?? 'Unknown'); ?></td>
                     <td>$<?= number_format($row['amount'], 2); ?></td>
                     <td><?= htmlspecialchars($row['payment_date']); ?></td>
+                    <td><?= htmlspecialchars($row['note']); ?></td>
                     <td>
                         <a href="crm_edit_payment.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
                         <a href="crm_delete_payment.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger"
