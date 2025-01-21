@@ -79,7 +79,7 @@ $chart_revenue = json_encode($monthly_revenue);
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+<!-- <script>
     var ctx = document.getElementById('revenueChart').getContext('2d');
     document.getElementById('revenueChart').width = 600;  // Set width
     document.getElementById('revenueChart').height = 300; // Set height
@@ -105,6 +105,6 @@ $chart_revenue = json_encode($monthly_revenue);
             }
         }
     });
-</script>
+</script> -->
 
 <?php include 'crm_footer.php'; ?>
