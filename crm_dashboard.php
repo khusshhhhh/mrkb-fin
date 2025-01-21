@@ -9,17 +9,14 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch total contacts
-$total_contacts = $conn->query("SELECT COUNT(*) FROM contact_us")->fetch_row()[0];
-
-// Fetch total messages
-$total_messages = $conn->query("SELECT COUNT(DISTINCT message) FROM contact_us")->fetch_row()[0];
-
 // Fetch total clients (unique emails)
-$total_clients = $conn->query("SELECT COUNT(DISTINCT email) FROM contact_us")->fetch_row()[0];
+$total_clients = $conn->query("SELECT COUNT(DISTINCT email) FROM clients")->fetch_row()[0];
 
 // Fetch total revenue
 $total_revenue = $conn->query("SELECT SUM(amount) FROM payments")->fetch_row()[0] ?? 0;
+
+//Total Expenses
+$total_revenue = $conn->query("SELECT SUM(amount) FROM expenses")->fetch_row()[0] ?? 0;
 
 // Fetch monthly revenue data for the chart
 $monthly_revenue = array_fill(0, 12, 0); // Initialize array with 12 months (0 values)
@@ -38,23 +35,7 @@ $chart_revenue = json_encode($monthly_revenue);
     <h2 class="text-center mb-4">CRM Dashboard</h2>
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Total Contacts</h5>
-                    <h2><?= $total_contacts; ?></h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Total Messages</h5>
-                    <h2><?= $total_messages; ?></h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card text-white bg-warning mb-3">
                 <div class="card-body text-center">
                     <h5 class="card-title">Total Clients</h5>
@@ -62,11 +43,19 @@ $chart_revenue = json_encode($monthly_revenue);
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card text-white bg-dark mb-3">
                 <div class="card-body text-center">
                     <h5 class="card-title">Total Revenue</h5>
                     <h2>$<?= number_format($total_revenue, 2); ?></h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Total Expense </h5>
+                    <h2>$<?= number_format($total_expense, 2); ?></h2>
                 </div>
             </div>
         </div>
