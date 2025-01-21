@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_id'])) {
                     </li>
                     <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_expenses.php">Expenses</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_expenses.php">Contect
+                    <li class="nav-item"><a class="nav-link btn btn-outline-info" href="crm_view_data.php">Contect
                             From</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="crm_tasks.php">Tasks</a></li> -->
                 </ul>
