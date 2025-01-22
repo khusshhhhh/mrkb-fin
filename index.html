@@ -19,6 +19,7 @@
     <link media="all" rel="stylesheet" href="vendors/bootstrap-datepicker/css/bootstrap-datepicker.css">
     <link media="all" rel="stylesheet" href="vendors/fancyBox/source/jquery.fancybox.css">
     <link media="all" rel="stylesheet" href="vendors/fancyBox/source/helpers/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -87,205 +88,13 @@
                                     </li>
                                     <li class="dropdown" data-animation="fadeIn">
                                         <a class="dropdown-toggle" href="about.html" data-title="Home">About Us</a>
-                                        <!-- <ul class="dropdown-menu no-border-radius">
-                                            <li class="dropdown dropdown-left dropdown-parent">
-                                                <a class="sub-marker" href="#"> No Sidebar <i
-                                                        class="icon-ios-more icn-right"></i></a>
-                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
-                                                    <li><a href="portfolio-no-sidebar-2-col.html"> 2 Column </a></li>
-                                                    <li><a href="portfolio-no-sidebar-3-col.html"> 3 Column </a></li>
-                                                    <li><a href="portfolio-no-sidebar-4-col.html"> 4 Column </a></li>
-                                                    <li><a href="portfolio-no-sidebar-6-col.html"> 6 Column </a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown dropdown-left dropdown-parent">
-                                                <a class="sub-marker" href="#"> Left Sidebar <i
-                                                        class="icon-ios-more icn-right"></i></a>
-                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
-                                                    <li><a href="portfolio-left-sidebar-2-col.html"> 2 Column </a></li>
-                                                    <li><a href="portfolio-left-sidebar-3-col.html"> 3 Column </a></li>
-                                                    <li><a href="portfolio-left-sidebar-4-col.html"> 4 Column </a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown dropdown-left dropdown-parent">
-                                                <a class="sub-marker" href="#"> Right Sidebar <i
-                                                        class="icon-ios-more icn-right"></i></a>
-                                                <ul class="dropdown-menu dropdown-menu-indent-sm no-border-radius">
-                                                    <li><a href="portfolio-right-sidebar-2-col.html"> 2 Column </a></li>
-                                                    <li><a href="portfolio-right-sidebar-3-col.html"> 3 Column </a></li>
-                                                    <li><a href="portfolio-right-sidebar-4-col.html"> 4 Column </a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="portfolio-masonary.html"> Masonary </a></li>
-                                            <li><a href="portfolio-full-width.html"> Full Width </a></li>
-                                            <li><a href="portfolio-full-width-spaced.html"> Full Spaced</a></li>
-                                            <li><a href="portfolio-3-col.html"> Boxed </a></li>
-                                            <li><a href="portfolio-single.html"> Single V1 </a></li>
-                                            <li><a href="portfolio-single-v2.html"> Single V2 </a></li>
-                                            <li><a href="portfolio-single-v3.html"> Single V3 </a></li>
-                                        </ul> -->
                                     </li>
-                                    <!-- <li class="dropdown dropdown-full-width-g" data-animation="fadeIn">
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-                                            data-title="Pages">Elements </a>
-                                        <div class="dropdown-menu no-border-radius no-padding" data-adjust="2">
-                                            <div class="row row-autoheight no-gutters">
-                                                <div class="col-lg-3 col-autoheight clearfix">
-                                                    <div class="widget-default clearfix">
-                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
-                                                            <li><a href="element-accordions.html"><i
-                                                                        class="icon-server"></i> ACCORDIONS </a></li>
-                                                            <li><a href="element-animations.html"><i
-                                                                        class="icon-magic"></i> ANIMATIONS </a></li>
-                                                            <li><a href="element-buttons.html"><i class="icon-link"></i>
-                                                                    BUTTONS </a></li>
-                                                            <li><a href="element-carousels.html"><i
-                                                                        class="icon-heart"></i> CAROUSEL </a></li>
-                                                            <li><a href="element-tabs.html"><i class="icon-tasks"></i>
-                                                                    TABS </a></li>
-                                                            <li><a href="element-columns.html"><i
-                                                                        class="icon-th-large"></i> COLUMNS </a></li>
-                                                            <li><a href="element-counters.html"><i
-                                                                        class="icon-time"></i> COUNTERS </a></li>
-                                                            <li><a href="element-data-tables.html"><i
-                                                                        class="icon-table"></i> DATA TABLES </a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-autoheight clearfix">
-                                                    <div class="widget-default clearfix">
-                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
-                                                            <li><a href="element-date-time-pickers.html"><i
-                                                                        class="icon-calendar-11"></i> DATE & TIME
-                                                                    PICKERS </a></li>
-                                                            <li><a href="element-dividers.html"><i
-                                                                        class="icon-indent-right"></i> DIVIDERS </a>
-                                                            </li>
-                                                            <li><a href="element-icon-boxes.html"><i
-                                                                        class="icon-lightbulb"></i> ICON BOXES </a></li>
-                                                            <li><a href="element-galleries.html"><i
-                                                                        class="icon-picture"></i> GALLERIES </a></li>
-                                                            <li><a href="element-header-styles.html"><i
-                                                                        class="icon-edit-pen-1"></i> HEADER STYLES </a>
-                                                            </li>
-                                                            <li><a href="element-icon-lists.html"><i
-                                                                        class="icon-list-alt"></i> ICON LISTS </a></li>
-                                                            <li><a href="element-labels.html"><i
-                                                                        class="icon-plus-circle"></i> LABELS </a></li>
-                                                            <li><a href="element-lightbox.html"><i
-                                                                        class="icon-resize-full"></i> LIGHTBOX </a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-autoheight clearfix">
-                                                    <div class="widget-default clearfix">
-                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
-                                                            <li><a href="element-google-maps.html"><i
-                                                                        class="icon-mark-map"></i> MAPS </a></li>
-                                                            <li><a href="element-media-embed.html"><i
-                                                                        class="icon-play"></i> MEDIA EMBEDS </a></li>
-                                                            <li><a href="element-modal-boxes.html"><i
-                                                                        class="icon-move"></i> MODAL BOXES </a></li>
-                                                            <li><a href="element-paginations.html"><i
-                                                                        class="icon-cogs"></i> PAGINATIONS </a></li>
-                                                            <li><a href="element-progressbar.html"><i
-                                                                        class="icon-progress-2"></i> PROGRESS BARS </a>
-                                                            </li>
-                                                            <li><a href="element-range-sliders.html"><i
-                                                                        class="icon-arrow-move"></i> RANGE SLIDER </a>
-                                                            </li>
-                                                            <li><a href="element-star-ratings.html"><i
-                                                                        class="icon-star-6"></i> STAR RATINGS </a></li>
-                                                            <li><a href="element-pricing-boxes.html"><i
-                                                                        class="icon-dollar-2"></i> PRICING BOXES </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-autoheight clearfix">
-                                                    <div class="widget-default clearfix">
-                                                        <ul class="s-list s-list-pl s-list-mb-10 no-padding">
-                                                            <li><a href="element-blockquotes.html"><i
-                                                                        class="icon-quote-left"></i> BLOCKQUOTES </a>
-                                                            </li>
-                                                            <li><a href="font-icons.html"><i class="icon-laptop-6"></i>
-                                                                    FONT ICONS </a></li>
-                                                            <li><a href="element-sections.html"><i
-                                                                        class="icon-folder-open"></i> SECTIONS </a></li>
-                                                            <li><a href="element-social-icons.html"><i
-                                                                        class="icon-facebook"></i> SOCIAL ICONS </a>
-                                                            </li>
-                                                            <li><a href="element-select-pickers.html"><i
-                                                                        class="icon-select"></i> SELECT PICKER </a></li>
-                                                            <li><a href="element-select-boxes.html"><i
-                                                                        class="icon-columns"></i> SELECT BOXES </a></li>
-                                                            <li><a href="team.html"><i class="icon-select"></i> TEAM
-                                                                    BLOCK </a></li>
-                                                            <li><a href="about.html"><i class="icon-columns"></i> ABOUT
-                                                                    BLOCK </a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li> -->
                                     <li>
                                         <a href="team.html"> Team </a>
                                     </li>
                                     <li>
                                         <a href="contact.html"> Contact US </a>
                                     </li>
-                                    <!-- <li class="dropdown cart-list margin-0-sm">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"
-                                            href="javascript:void(0);"><span class="hidden-lg-up"> Shopping Cart
-                                            </span><i class="custom-icon-cart m-marker"></i></a>
-                                        <div class="dropdown-menu-container">
-                                            <div class="dropdown-menu no-border-radius col-lg-1 col-md-4 col-sm-4">
-                                                <h4> Shopping Cart </h4>
-                                                <ul class="s-list no-padding">
-                                                    <li class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
-                                                            <div class="img">
-                                                                <a href="#"><img src="img/img-02.jpg"
-                                                                        alt="image description"></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
-                                                            <h6> <a href="#"><strong>Product 1 </strong></a><span
-                                                                    class="text-muted float-right"> x 1 </span></h6>
-                                                            <h6> $199 </h6>
-                                                        </div>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
-                                                            <div class="img">
-                                                                <a href="#"><img src="img/img-02.jpg"
-                                                                        alt="image description"></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
-                                                            <h6> <a href="#"><strong>Product 2 </strong></a><span
-                                                                    class="text-muted float-right"> x 2 </span></h6>
-                                                            <h6> $199 </h6>
-                                                        </div>
-                                                    </li>
-                                                    <li class="divider margin-bottom-1"></li>
-                                                    <li class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col">
-                                                            <h2> Total </h2>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-7 col">
-                                                            <h2 class="text-right"> $3300 </h2>
-                                                        </div>
-                                                    </li>
-                                                    <li><a href="#"
-                                                            class="btn btn-sm btn-block btn-secondary btn-mina btn-mina-rip-br">
-                                                            View Cart </a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li> -->
                                 </ul>
                             </div>
                             <!-- <div class="navbar-pos-search">
@@ -302,16 +111,49 @@
             <main>
                 <!-- visual/banner of the page -->
                 <div class="banner banner-home">
-                    <!-- <div class="overlay"></div> -->
-                    <div class="hero-container">
-                        <!-- Left Section (40%) -->
-                        <div class="hero-text">
-                            <h4>PERSONAL, BUSINESS, LOAN, FINANCE</h4>
-                            <h1>JOB DONE</h1>
-                            <p>Unlock Your Financial Dreams with Confidence along with MRKB Finance</p>
-                            <a href="contact.html"><button class="btn-main">Let's Talk</button></a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide" style="background-image: url('banner.png');">
+                                <!-- <div class="overlay"></div> -->
+                                <div class="hero-text">
+                                    <h4>Personal, Business, Finance and Home Loans</h4>
+                                    <h1>JOB DONE</h1>
+                                    <p>Unlock Your Financial Dreams with Confidence along with MRKB Finance.</p>
+                                    <a href="contact.html"><button class="btn-main">Let's Talk</button></a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide" style="background-image: url('banner1.png');">
+                                <!-- <div class="overlay"></div> -->
+                                <div class="hero-text">
+                                    <h4>Personalized Home Loan Solutions</h4>
+                                    <h1>SECURE HOME LOAN</h1>
+                                    <p> Your Key to the Perfect Home Starts Here with MRKB Finance</p>
+                                    <a href="contact.html"><button class="btn-main">Let's Talk</button></a>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide" style="background-image: url('banner2.png');">
+                                <!-- <div class="overlay"></div> -->
+                                <div class="hero-text">
+                                    <h4>Tailored Finance Solutions</h4>
+                                    <h1>GROW YOUR BUSINESS</h1>
+                                    <p>Fuel Your Business Growth with Flexible Financing with MRKB Finance</p>
+                                    <a href="contact.html"><button class="btn-main">Let's Talk</button></a>
+                                </div>
+                            </div>
+
                         </div>
-                        <!-- Right Section (60%) -->
+
+                        <!-- Swiper Pagination & Navigation -->
+                        <!-- <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
+
                     </div>
                 </div>
                 <!--/visual/banner of the page -->
@@ -770,6 +612,25 @@
     <!-- jquery library -->
     <script src="vendors/jquery/jquery-2.1.4.min.js"></script>
     <!-- external scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 6000, // 5 seconds per slide
+                disableOnInteraction: false
+            },
+            // effect: 'fade',
+            // fadeEffect: {
+            //     crossFade: true
+            // },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    </script>
     <script src="vendors/tether/dist/js/tether.min.js"></script>
     <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendors/stellar/jquery.stellar.min.js"></script>
