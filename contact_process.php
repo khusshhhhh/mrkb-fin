@@ -13,11 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_code = $conn->real_escape_string($_POST['post_code']);
     $service = $conn->real_escape_string($_POST['service_selector']);
     $message = $conn->real_escape_string($_POST['con_message']);
+    $utm_source = isset($_POST['utm_source']) ? $conn->real_escape_string($_POST['utm_source']) : 'Direct'; // Capture UTM Source
     $created_date = date('Y-m-d'); // Store date only
 
     // Insert into database
-    $sql = "INSERT INTO contact_us (name, phone, email, state, post_code, service, message, created_date) 
-            VALUES ('$name', '$phone', '$email', '$state', '$post_code', '$service', '$message', '$created_date')";
+    $sql = "INSERT INTO contact_us (name, phone, email, state, post_code, service, message, utm_source, created_date) 
+            VALUES ('$name', '$phone', '$email', '$state', '$post_code', '$service', '$message', '$utm_source', '$created_date')";
 
     if ($conn->query($sql) === TRUE) {
         // Send email notification
@@ -31,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "State: $state\n" .
             "Post Code: $post_code\n" .
             "Service: $service\n" .
-            "Message: $message\n";
+            "Message: $message\n" .
+            "UTM Source: $utm_source\n";
 
         $headers = "From: no-reply@mrkbfinance.com.au";
 

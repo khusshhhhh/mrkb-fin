@@ -397,6 +397,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="utm_source" id="utm_source">
                                             <div style="display:none;">
                                                 <input type="text" name="honeypot" id="honeypot" value="">
                                             </div>
@@ -619,6 +620,22 @@
     <script src="vendors/bootstrap-slider-master/src/js/bootstrap-slider.js"></script>
     <script src="vendors/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <script src="js/mega-menu.js"></script>
+    <script>
+        // Function to get URL parameter values
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || "";
+        }
+
+        // Set the UTM source field in the form
+        document.addEventListener("DOMContentLoaded", function () {
+            const utmSource = getQueryParam("utm_source");
+            if (utmSource) {
+                document.getElementById("utm_source").value = utmSource;
+            }
+        });
+    </script>
+
     <!-- custom jquery script -->
     <script src="js/jquery.main.js"></script>
     <script src="js/jquery.validate.js"></script>

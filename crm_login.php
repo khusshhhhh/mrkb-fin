@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($password === $db_password) { // Direct comparison
             $_SESSION['user_id'] = $user_id;
             $_SESSION['username'] = $username;
-            header("Location: crm_dashboard.php");
+            header("Location: admin_contact_response.php");
             exit();
         } else {
             $error = "Invalid credentials. Try again!";
